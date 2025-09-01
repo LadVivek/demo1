@@ -1,0 +1,55 @@
+<!-- Training.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Training - Facial Recognition</title>
+    <link rel="stylesheet" href="TrainingUI.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Facial Recognition Training</h1>
+            <p class="subtitle">Add new people to your model</p>
+        </header>
+
+        <!-- Training Section -->
+        <div class="section">
+            <h2><span class="icon">👤</span> Training Form</h2>
+            
+            <div class="form-group">
+                <label for="personName">Person Name:</label>
+                <input type="text" id="personName" placeholder="Enter person's name">
+            </div>
+
+            <div class="form-group">
+                <label for="personId">Person ID:</label>
+                <input type="number" id="personId" placeholder="Enter unique ID">
+            </div>
+
+            <div class="form-group">
+                <label>Training Images:</label>
+                <input type="file" id="trainingImages" multiple accept="image/*">
+            </div>
+
+            <div class="form-group">
+                <label>Or capture from camera:</label>
+                <video id="trainingVideo" autoplay style="display: none;"></video>
+                <canvas id="trainingCanvas" style="display: none;"></canvas>
+                <div class="controls">
+                    <button class="btn" onclick="startTrainingCamera()">Start Camera</button>
+                    <button class="btn" onclick="captureTrainingImage()">Capture Image</button>
+                    <button class="btn" onclick="stopTrainingCamera()">Stop Camera</button>
+                </div>
+            </div>
+
+            <button class="btn" onclick="startTraining()">🚀 Start Training</button>
+            <div id="trainingStatus" class="status"></div>
+        </div>
+
+        <a href="TestingUI.html">Go to Testing Page</a>
+    </div>
+
+    <script src="TraingUI.js"></script> <!-- move JS logic here -->
+</body>
+</html>
